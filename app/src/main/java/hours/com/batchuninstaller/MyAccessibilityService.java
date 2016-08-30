@@ -75,10 +75,11 @@ public class MyAccessibilityService extends AccessibilityService {
             if (nodeInfo == null) {
                 return;
             }
-
+            Log.i(TAG,"BC1");
             List<AccessibilityNodeInfo> list = nodeInfo
                     .findAccessibilityNodeInfosByViewId("com.android.settings:id/left_button");
             for (AccessibilityNodeInfo node : list) {
+                Log.i(TAG,"BC2");
                 Log.i(TAG, "ACC::onAccessibilityEvent: left_button " + node);
                 node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
             }
@@ -87,18 +88,20 @@ public class MyAccessibilityService extends AccessibilityService {
 
             list = nodeInfo
                     .findAccessibilityNodeInfosByViewId("android:id/button1");
-            Log.i(TAG,"BC");
+            Log.i(TAG,"BC3");
 
             for (AccessibilityNodeInfo node : list) {
                 Log.i(TAG, "ACC::onAccessibilityEvent: button1 " + node);
                 node.performAction(AccessibilityNodeInfo.ACTION_CLICK);
+                Log.i(TAG,"BC4");
             }
-            Log.i(TAG,"BC");
+            Log.i(TAG,"BC5");
 
         }
 
         else if(AccessibilityEvent.CONTENT_CHANGE_TYPE_SUBTREE == event.getEventType()){
             AccessibilityNodeInfo nodeInfo = event.getSource();
+            Log.i(TAG,"BC6");
             Log.i(TAG, "ACC::onAccessibilityEvent: nodeInfo=" + nodeInfo);
             if (nodeInfo == null) {
                 return;

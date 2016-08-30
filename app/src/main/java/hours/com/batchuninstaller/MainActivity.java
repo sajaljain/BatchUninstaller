@@ -48,6 +48,10 @@ public class MainActivity extends AppCompatActivity {
         uninstallIntent.setFlags(Intent.FLAG_DEBUG_LOG_RESOLUTION);
         startActivity(uninstallIntent);
 
+
+
+
+
             }
         });
 
