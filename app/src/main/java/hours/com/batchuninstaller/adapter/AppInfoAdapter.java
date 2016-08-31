@@ -74,8 +74,6 @@ public class AppInfoAdapter extends
 
                 apk.setSelected(cb.isChecked());
                 data.get(pos).setSelected(cb.isChecked());
-                
-
                 notifyDataSetChanged();
             }
 

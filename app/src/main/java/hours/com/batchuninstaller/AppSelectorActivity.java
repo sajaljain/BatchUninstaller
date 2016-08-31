@@ -4,37 +4,31 @@ import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
-import android.nfc.Tag;
-import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
-import java.util.ListIterator;
 
 import hours.com.batchuninstaller.adapter.AppInfoAdapter;
 import hours.com.batchuninstaller.model.AppDetails;
 
-public class Splash extends AppCompatActivity {
+public class AppSelectorActivity extends AppCompatActivity {
     private Button uninstall;
     private RecyclerView mRecyclerView;
     private RecyclerView.Adapter mAdapter;
     private RecyclerView.LayoutManager mLayoutManager;
-    private final String TAG = "Splash";
+    private final String TAG = "AppSelectorActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_splash);
+        setContentView(R.layout.activity_app_selector);
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
         uninstall = (Button) findViewById(R.id.uninstall);
         mLayoutManager = new LinearLayoutManager(this);
@@ -80,6 +74,8 @@ Uri packageURI = Uri.parse("package:" + app.packageName);
                     AppDetails app = apps.get(i);
                     if (app.isSelected() == true) {
 
+
+
                         data = data + "\n" + app.getAppName().toString();
 
                         //here we pop up
@@ -94,15 +90,9 @@ Uri packageURI = Uri.parse("package:" + app.packageName);
 
                 }
 
-
-                Toast.makeText(Splash.this,
-                        "Selected Students: \n" + data, Toast.LENGTH_LONG)
-                        .show();
-
-
-
             }
         });
+
 
 
     }

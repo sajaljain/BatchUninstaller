@@ -1,4 +1,4 @@
 <resources>
-    <string name="app_name">BatchUninstaller</string>
+    <string name="app_name">BatchUninstall</string>
     <string name="accessibility_service_description">try to uninstall apks.</string>
 </resources>
